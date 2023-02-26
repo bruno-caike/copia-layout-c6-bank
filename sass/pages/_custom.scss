@@ -1,0 +1,274 @@
+// begin header
+.header {
+    position: absolute;
+    width: 100%;
+    top: 3.8rem;
+    .container {
+        @include flex(space-between, center);
+        height: 7.2rem;
+    }
+    .logo {
+        display: grid;
+        &, img {
+            @include images;
+            max-width: 12rem;
+        }
+    }
+    nav {
+        width: 100%;
+        max-width: 89.6rem;
+        @include flex(space-between, center);
+        > ul:first-child {
+            display: flex;
+            > li {
+                a {
+                    color: rgba($color-white, .7);
+                    @include transition;
+                    font-weight: 500;
+                    img {
+                        @include transition;
+                        margin-left: 1.2rem;
+                    }
+                    &:hover {
+                        color: darken(rgba($color-white, .7), 20%);
+                        img {
+                            opacity: .7;
+                        }
+                    }
+                }
+                &:first-child {
+                    margin-right: 4.65rem;
+                }
+            }
+        }
+        > ul:last-child {
+            a {
+                @include button;
+            }
+        }
+    }
+}
+// end header
+
+// begin section-hero
+.section-hero {
+    background-image: url('/img/baner-section-hero.jpg');
+    height: 70rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 7.2rem;
+    display: flex;
+    align-items: center;
+
+    .main {
+        .new {
+            display: flex;
+            align-items: center;
+            a {
+                @include bg-color(color-blue);
+                @include color(color-white);
+                padding: .5rem 1rem;
+                border-radius: 12rem;
+                margin-right: 1.2rem;
+                @include transition;
+                &:hover {
+                    background-color: darken($color-blue, 10%);
+                }
+            }
+            span {
+                color: rgba($color-white, .7);
+                font-size: var(--font-size-x-small);
+            }
+        }
+        h1 {
+            @include color(color-white);
+            padding: 3.4rem 0 2.4rem 0;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            font-size: var(--font-size-x-large);
+            line-height: 1.3;
+            max-width: 74rem;
+        }
+        p {
+            font-weight: 500;
+            font-size: var(--font-size-medium);
+            color: rgba($color-white, .7);
+            max-width: 36.5rem;
+            margin-bottom: 4rem;
+        }
+        > a {
+            @include color(color-white);
+            @include transition;
+            text-transform: uppercase;
+            font-family: 'Montserrat', sans-serif;
+            font-size: var(--font-size-x-small);
+            border: .1rem solid $color-white;
+            border-radius: 10rem;
+            padding: 1.5rem 4rem;
+            &:hover {
+                @include bg-color(color-white);
+                @include color(color-black)
+            }
+        }
+    }
+}
+// end section-hero
+
+// begin section-no-fees
+.section-no-fees {
+    padding: 9.6rem 0 8.1rem 0;
+    .container {
+        display: flex;
+        justify-content: space-between;
+    }
+    .main {
+        max-width: 60.4rem;
+        .title {
+            @include title;
+            margin-bottom: 10rem;
+        }
+        .contaner-articles {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 6.8rem 10rem;
+            > div {
+                position: relative;
+                &::before {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 3.7rem;
+                    width: 1.5rem;
+                    height: .2rem;
+                    @include bg-color(color-yellow)
+                }
+                img {
+                    display: block;
+                    height: 2.2rem;
+                    margin-bottom: 3.3rem;
+                }
+                h4 {
+                    font-family: 'Montserrat', sans-serif;
+                    font-weight: 500;
+                    font-size: var(--font-size-medium);
+                    margin-bottom: .8rem;
+                }
+                h4, p {
+                    line-height: 1.5;
+                }
+                p {
+                    @include color(color-gray);
+                }
+            }
+            
+        }
+    }
+    .cards {
+        max-width: 46.6rem;
+        img {
+            @include images;
+            margin-top: -16.5rem;
+        }
+    }
+}
+// end section-no-fees
+
+// begin section-a-complete-bank
+.section-a-complete-bank {
+    @include bg-color(color-gray-light);
+    padding: 10.9rem 0 13.4rem 0;
+    .main {
+        @include flex(space-between, center);
+        margin-bottom: 8.7rem;
+        .title {
+            @include title;
+        }
+        .buttons {
+            width: 100%;
+            max-width: 59.2rem;
+            border: .1rem solid #C4C4C4;
+            @include flex(space-between, center);
+            padding: .8rem 1.1rem;
+            border-radius: 12rem;
+            button {
+                width: 100%;
+                @include center;
+                max-width: 26.9rem;
+                height: 5.6rem;
+                @include transition;
+                cursor: pointer;
+                @include color(color-gray);
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 500;
+                border-radius: 12rem;
+                &:hover {
+                    font-weight: 600;
+                    @include bg-color(color-black);
+                    @include color(color-white);
+                }
+            }
+        }
+    }
+    .account-with-card {
+        position: relative;
+        background: linear-gradient(98.6deg, #020302 7.61%, #242424 96.26%);
+        padding: 9.7rem 10.3rem 10.1rem 10.3rem;
+        border-radius: 1.2rem;
+        h4 {
+            @include color(color-white);
+            line-height: 1.3;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: var(--font-size-x-medium);
+            margin-bottom: 1.7rem;
+        }
+        p {
+            line-height: 1.5;
+            color: rgba($color-white, .7);
+            max-width: 34.1rem;
+            margin-bottom: 4.3rem;
+        }
+        a {
+            max-width: 17rem;
+            @include flex(space-between, center);
+            font-size: var(--font-size-small);
+            font-weight: 500;
+            @include color(color-gray-light);
+            @include transition;
+            img {
+                @include transition;
+                @include images;
+                max-width: 3.2rem;
+            }
+            &:hover {
+                color: darken($color-gray-light, 10%);
+                img {
+                    opacity: .7;
+                }
+            }
+        }
+        .img-card-account-with, .img-cell-account-with, .img-c6-business {
+            position: absolute;
+            @include images;
+        }
+        .img-card-account-with {
+            max-width: 46.2rem;
+            top: -7.9rem;
+            right: 23.2rem;
+            z-index: 2;
+        }
+        .img-cell-account-with {
+            max-width: 51.9rem;
+            bottom: 0rem;
+            right: 13.6rem;
+            z-index: 1;
+        }
+        .img-c6-business {
+            max-width: 13.1rem;
+            bottom: 5.3rem;
+            right: 7.2rem;
+        }
+    }
+}
+// end section-a-complete-bank

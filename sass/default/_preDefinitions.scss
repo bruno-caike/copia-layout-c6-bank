@@ -1,0 +1,101 @@
+body {
+    color: $color-black;
+    background-color: $color-white;
+    padding: 0 !important;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: var(--font-size-xx-small);
+}
+::selection {
+    background: $color-blue;
+    color: $color-white;
+}
+
+/*BEGIN CONTAINER*/
+.container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 124.6rem;
+}
+/*END CONTAINER*/
+
+/*BEGIN IMAGES*/
+%images {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    object-fit: cover;
+}
+/*END IMAGES*/
+
+/// begin colors
+@each $color, $value in $colors {
+    %#{$color} {color: #{$value}}
+}
+@each $color, $value in $bg-colors {
+    %bg-#{$color} {background-color: #{$value}}
+}
+//end colors
+
+/*begin centralize*/
+%centralize {
+    @include mixin-centralize;
+}
+/*end centralize*/
+%none {
+    display: none;
+}
+%transition {
+    transition: all .3s;
+}
+strong {font-weight: bold;}
+button {
+    outline: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border: 0;
+    @include center;
+    background-color: transparent;
+}
+input, textarea, select {
+    padding: 10px;
+    outline: none;
+    border: 0;
+    width: 100%;
+}
+
+%title-default {
+    h2, h3 {
+        font-family: 'Montserrat', sans-serif;
+        line-height: 1.3;
+    }
+    h2 {
+        font-size: var(--font-size-large);
+        font-weight: bold;
+        padding-bottom: .8rem;
+        letter-spacing: -.048rem;
+    }
+    h3 {
+        @include color(color-gray);
+        font-size: var(--font-size-xx-medium);
+        font-weight: 500;
+    }
+}
+%button-default {
+    @include bg-color(color-yellow);
+    @include color(color-black);
+    @include center;
+    @include transition;
+    font-size: var(--font-size-x-small);
+    padding: 1.1rem 5rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    border-radius: 10rem;
+    &:hover {
+        background-color: lighten($color-yellow, 10%);
+    }
+}

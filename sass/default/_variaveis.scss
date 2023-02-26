@@ -1,0 +1,42 @@
+// variaveis de tipogradia
+:root {
+    --font-size-small: 1.4rem; // 14px 
+    --font-size-x-small: 1.5rem; // 15px
+    --font-size-xx-small: 1.6rem; // 16px
+    --font-size-medium: 1.8rem; // 18px
+    --font-size-x-medium: 2.4rem; // 24px 
+    --font-size-xx-medium: 2.8rem; // 28px 
+    --font-size-large: 4rem; // 40px
+    --font-size-x-large: 4.8rem; // 48px
+}
+
+// variaveis de cores
+$color-black: #242424;
+$color-gray-light: #FAFAFA;
+$color-gray: #616161;
+$color-yellow: #FFCE2E;
+$color-blue: #006D8F;
+$color-white: #FFFFFF;
+
+// array para a criação das classes placeholder de cores
+$colors: () !default;
+$colors: map_merge(
+    (
+        "color-black": $color-black,
+        "color-gray": $color-gray,
+        "color-gray-light": $color-gray-light,
+        "color-yellow": $color-yellow,
+        "color-blue": $color-blue,
+        "color-white": $color-white,
+    ), $colors
+);
+$bg-colors: map_merge(
+    (
+        "color-black": $color-black,
+        "color-gray": $color-gray,
+        "color-gray-light": $color-gray-light,
+        "color-yellow": $color-yellow,
+        "color-blue": $color-blue,
+        "color-white": $color-white,
+    ), $colors
+);
